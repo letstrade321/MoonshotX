@@ -18,6 +18,7 @@ export default defineConfig({
   build: {
     sourcemap: true,
     rollupOptions: {
+      external: ["@/components/ui/toaster"],
       output: {
         manualChunks: undefined
       }
