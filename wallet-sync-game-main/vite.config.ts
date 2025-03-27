@@ -17,10 +17,16 @@ export default defineConfig({
       output: {
         manualChunks: undefined
       }
+    },
+    commonjsOptions: {
+      include: [/node_modules/],
     }
   },
   optimizeDeps: {
     exclude: ["@gpteng.co/gptengineer"]
+  },
+  esbuild: {
+    jsxInject: `import React from 'react'`
   }
 });
 
