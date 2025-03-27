@@ -18,6 +18,9 @@ export default defineConfig({
         manualChunks: undefined
       }
     }
+  },
+  optimizeDeps: {
+    include: ["@/components/ui/toaster"]
   }
 });
 
