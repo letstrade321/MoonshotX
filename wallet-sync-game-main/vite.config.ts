@@ -21,7 +21,9 @@ export default defineConfig({
   build: {
     sourcemap: true,
     rollupOptions: {
-      manualChunks: undefined
+      output: {
+        manualChunks: undefined
+      }
     }
   }
 });
