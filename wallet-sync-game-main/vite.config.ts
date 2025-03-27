@@ -15,12 +15,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  optimizeDeps: {
+    include: ["@/components/ui/toaster"]
+  },
   build: {
     sourcemap: true,
     rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
+      manualChunks: undefined
     }
   }
 });
