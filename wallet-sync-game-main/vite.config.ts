@@ -18,22 +18,6 @@ export default defineConfig({
   build: {
     sourcemap: true,
     rollupOptions: {
-      external: [
-        "@/components/ui/toaster",
-        "@/components/ui/sonner",
-        "@/components/ui/tooltip",
-        "@/components/ui/button",
-        "@/components/ui/form",
-        "@/components/ui/input",
-        "@/components/ui/card",
-        "@/components/ui/tabs",
-        "@/components/ui/alert",
-        "@/components/ui/alert-dialog",
-        "@/components/ui/select",
-        "@/components/ui/badge",
-        "@/components/ui/dialog",
-        "@/components/ui/label"
-      ],
       output: {
         manualChunks: undefined
       }
