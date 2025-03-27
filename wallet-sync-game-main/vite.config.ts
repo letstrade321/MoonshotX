@@ -20,7 +20,8 @@ export default defineConfig({
     }
   },
   optimizeDeps: {
-    include: ["@/components/ui/toaster"]
+    include: ["@/components/ui/toaster"],
+    exclude: ["@gpteng.co/gptengineer"]
   }
 });
 
