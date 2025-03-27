@@ -15,9 +15,6 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  optimizeDeps: {
-    include: ["@/components/ui/toaster"]
-  },
   build: {
     sourcemap: true,
     rollupOptions: {
@@ -25,6 +22,24 @@ export default defineConfig({
         manualChunks: undefined
       }
     }
+  },
+  optimizeDeps: {
+    include: [
+      "@/components/ui/toaster",
+      "@/components/ui/sonner",
+      "@/components/ui/tooltip",
+      "@/components/ui/button",
+      "@/components/ui/form",
+      "@/components/ui/input",
+      "@/components/ui/card",
+      "@/components/ui/tabs",
+      "@/components/ui/alert",
+      "@/components/ui/alert-dialog",
+      "@/components/ui/select",
+      "@/components/ui/badge",
+      "@/components/ui/dialog",
+      "@/components/ui/label"
+    ]
   }
 });
 
