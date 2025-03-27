@@ -13,14 +13,21 @@ export default defineConfig({
   },
   build: {
     sourcemap: true,
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        manualChunks: undefined,
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       }
-    },
-    commonjsOptions: {
-      include: [/node_modules/],
     }
+  },
+  preview: {
+    port: 3000,
+    strictPort: true,
+    host: true
   },
   optimizeDeps: {
     exclude: ["@gpteng.co/gptengineer"]
