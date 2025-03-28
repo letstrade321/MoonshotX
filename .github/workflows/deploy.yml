@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./wallet-sync-game-main
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,8 +27,20 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      - name: Debug directory structure
+        run: |
+          pwd
+          ls -la
+          ls -la wallet-sync-game-main
+
+      - name: Change to project directory
+        run: cd wallet-sync-game-main
+
       - name: Install dependencies
         run: npm ci
+
+      - name: Debug package.json
+        run: cat package.json
 
       - name: Build with Vite
         run: npm run build
@@ -39,7 +48,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './wallet-sync-game-main/dist'
+          path: wallet-sync-game-main/dist
 
   deploy:
     environment:
