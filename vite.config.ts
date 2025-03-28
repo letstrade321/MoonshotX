@@ -13,8 +13,8 @@ export default defineConfig({
   },
   build: {
     sourcemap: true,
-    rollupOptions: {
-      manualChunks: undefined,
-    },
-  },
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true
+  }
 }) 
